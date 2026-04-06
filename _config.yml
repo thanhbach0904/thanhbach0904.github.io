@@ -1,10 +1,10 @@
 title: Thanh's Journal
-description: Perspectives on Politics, Economics, Tech & Life
+description: Perspectives on Politics, Tech & Life
 baseurl: ""
 url: "https://thanhback0904.github.io"
 author: Thanh
 
-permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
 
 markdown: kramdown
 highlighter: rouge
@@ -27,7 +27,5 @@ tags_list:
   - { slug: "politics", label: "Politics" }
   - { slug: "analysis", label: "Analysis" }
   - { slug: "technical", label: "Technical" }
+  - { slug: "books", label: "Books" }
   - { slug: "life", label: "Life's Perspectives" }
-  - { slug: "economics", label: "Economics" }
-  - { slug: "asia", label: "Asia" }
-  - { slug: "world", label: "World" }

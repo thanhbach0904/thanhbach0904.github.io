@@ -9,7 +9,8 @@ An Economist-style personal blog built with Jekyll for GitHub Pages.
 ├── _layouts/           # Page templates
 ├── _includes/          # Reusable components
 ├── _posts/             # Your articles (Markdown)
-├── assets/css/         # SCSS styles
+├── _sass/              # SCSS styles (compiled by Jekyll)
+├── assets/css/         # CSS entry point
 ├── tag/                # Tag index pages
 └── index.html          # Homepage
 ```
@@ -23,7 +24,7 @@ Create a file in `_posts/` named `YYYY-MM-DD-your-title.md`:
 layout: post
 title: "Your Article Title"
 date: 2026-04-06
-tag: economics          # politics | economics | analysis | technical | life
+tag: life          # politics | analysis | technical | books | life
 description: "One-sentence summary shown in card previews."
 read_time: 5
 featured: true          # Set true for ONE post to appear as the homepage hero
@@ -38,9 +39,9 @@ Your article content here in **Markdown**.
 | Tag | URL |
 |-----|-----|
 | `politics` | `/tag/politics/` |
-| `economics` | `/tag/economics/` |
 | `analysis` | `/tag/analysis/` |
 | `technical` | `/tag/technical/` |
+| `books` | `/tag/books/` |
 | `life` | `/tag/life/` |
 
 ## Deployment

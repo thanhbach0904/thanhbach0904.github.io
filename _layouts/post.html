@@ -37,14 +37,14 @@ layout: default
       <aside class="post-sidebar">
         <h3 class="sidebar-title">More in {{ page.tag | capitalize }}</h3>
         <ul class="sidebar-posts">
-          {% assign related = site.posts | where: "tag", page.tag %}
-          {% for post in related limit:5 %}
-            {% unless post.url == page.url %}
+          {% assign related_posts = site.posts | where: "tag", page.tag %}
+          {% for related_post in related_posts limit:5 %}
+            {% unless related_post.url == page.url %}
             <li>
-              <a href="{{ post.url | relative_url }}">
-                <span class="sidebar-post-tag">{{ post.tag | capitalize }}</span>
-                <span class="sidebar-post-title">{{ post.title }}</span>
-                {% if post.read_time %}<span class="sidebar-read-time">{{ post.read_time }} min read</span>{% endif %}
+              <a href="{{ related_post.url | relative_url }}">
+                <span class="sidebar-post-tag">{{ related_post.tag | capitalize }}</span>
+                <span class="sidebar-post-title">{{ related_post.title }}</span>
+                {% if related_post.read_time %}<span class="sidebar-read-time">{{ related_post.read_time }} min read</span>{% endif %}
               </a>
             </li>
             {% endunless %}
