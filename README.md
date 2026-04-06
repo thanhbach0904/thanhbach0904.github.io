@@ -23,7 +23,7 @@ Create a file in `_posts/` named `YYYY-MM-DD-your-title.md`:
 layout: post
 title: "Your Article Title"
 date: 2026-04-06
-tag: economics          # politics | economics | analysis | technical | asia | world | life
+tag: economics          # politics | economics | analysis | technical | life
 description: "One-sentence summary shown in card previews."
 read_time: 5
 featured: true          # Set true for ONE post to appear as the homepage hero
@@ -41,8 +41,6 @@ Your article content here in **Markdown**.
 | `economics` | `/tag/economics/` |
 | `analysis` | `/tag/analysis/` |
 | `technical` | `/tag/technical/` |
-| `asia` | `/tag/asia/` |
-| `world` | `/tag/world/` |
 | `life` | `/tag/life/` |
 
 ## Deployment
