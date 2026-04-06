@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="tag-page">
+  <div class="container">
+    <div class="tag-header">
+      <p class="tag-label">Topic</p>
+      <h1>{{ page.tag_label }}</h1>
+      {% if page.tag_description %}<p>{{ page.tag_description }}</p>{% endif %}
+    </div>
+
+    {% assign tag_posts = site.posts | where: "tag", page.tag_slug %}
+    {% if tag_posts.size > 0 %}
+    <div class="tag-posts-grid">
+      {% for post in tag_posts %}
+        {% include article-card.html post=post %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="color:#999; font-style:italic; padding: 2rem 0;">No articles yet in this topic. Check back soon.</p>
+    {% endif %}
+  </div>
+</div>

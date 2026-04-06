@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<article class="post-page">
+  <div class="post-header">
+    <div class="container">
+      {% if page.tag %}
+      <a href="{{ '/tag/' | append: page.tag | append: '/' | relative_url }}" class="post-tag-label">{{ page.tag | capitalize }}</a>
+      {% endif %}
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+      {% endif %}
+      <div class="post-meta">
+        <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% if page.read_time %}
+        <span class="post-read-time">{{ page.read_time }} min read</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if page.image %}
+  <div class="post-hero-image">
+    <div class="container">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="post-body">
+    <div class="container post-container">
+      <div class="post-content">
+        {{ content }}
+      </div>
+
+      <aside class="post-sidebar">
+        <h3 class="sidebar-title">More in {{ page.tag | capitalize }}</h3>
+        <ul class="sidebar-posts">
+          {% assign related = site.posts | where: "tag", page.tag %}
+          {% for post in related limit:5 %}
+            {% unless post.url == page.url %}
+            <li>
+              <a href="{{ post.url | relative_url }}">
+                <span class="sidebar-post-tag">{{ post.tag | capitalize }}</span>
+                <span class="sidebar-post-title">{{ post.title }}</span>
+                {% if post.read_time %}<span class="sidebar-read-time">{{ post.read_time }} min read</span>{% endif %}
+              </a>
+            </li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</article>

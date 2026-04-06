@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="header-top">
+    <div class="container header-inner">
+      <a href="{{ '/' | relative_url }}" class="site-logo">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="{{ '/tag/politics/' | relative_url }}" {% if page.tag == 'politics' %}class="active"{% endif %}>Politics</a>
+        <a href="{{ '/tag/economics/' | relative_url }}" {% if page.tag == 'economics' %}class="active"{% endif %}>Economics</a>
+        <a href="{{ '/tag/analysis/' | relative_url }}" {% if page.tag == 'analysis' %}class="active"{% endif %}>Analysis</a>
+        <a href="{{ '/tag/technical/' | relative_url }}" {% if page.tag == 'technical' %}class="active"{% endif %}>Technical</a>
+        <a href="{{ '/tag/asia/' | relative_url }}" {% if page.tag == 'asia' %}class="active"{% endif %}>Asia</a>
+        <a href="{{ '/tag/world/' | relative_url }}" {% if page.tag == 'world' %}class="active"{% endif %}>World</a>
+        <a href="{{ '/tag/life/' | relative_url }}" {% if page.tag == 'life' %}class="active"{% endif %}>Life's Perspectives</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.site-nav');
+  if (toggle) {
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  }
+</script>

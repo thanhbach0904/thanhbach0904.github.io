@@ -1,0 +1,146 @@
+---
+layout: default
+title: Home
+---
+
+<div class="home-page">
+
+  <!-- ===== HERO SECTION ===== -->
+  {% assign featured = site.posts | where: "featured", true | first %}
+  {% assign recent = site.posts | limit: 6 %}
+
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Large featured article -->
+        {% if featured %}
+        <div class="article-card hero-featured">
+          {% if featured.image %}
+          <a href="{{ featured.url | relative_url }}" class="card-image-link">
+            <div class="card-image">
+              <img src="{{ featured.image | relative_url }}" alt="{{ featured.title }}" />
+            </div>
+          </a>
+          {% endif %}
+          <div class="card-body">
+            {% if featured.tag %}
+            <a href="{{ '/tag/' | append: featured.tag | append: '/' | relative_url }}" class="card-tag">{{ featured.tag | capitalize }}</a>
+            {% endif %}
+            <h2 class="card-title" style="font-size:1.7rem;line-height:1.2;">
+              <a href="{{ featured.url | relative_url }}">{{ featured.title }}</a>
+            </h2>
+            {% if featured.description %}
+            <p class="card-description">{{ featured.description }}</p>
+            {% endif %}
+            {% if featured.read_time %}
+            <span class="card-read-time">{{ featured.read_time }} min read</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Stacked side articles -->
+        <div class="hero-stack">
+          {% assign stack_posts = site.posts | where_exp: "p", "p.url != featured.url" | limit: 2 %}
+          {% for post in stack_posts %}
+          <div class="article-card hero-stack-item">
+            {% if post.image %}
+            <a href="{{ post.url | relative_url }}" class="card-image-link">
+              <div class="card-image">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" />
+              </div>
+            </a>
+            {% endif %}
+            <div class="card-body">
+              {% if post.tag %}
+              <a href="{{ '/tag/' | append: post.tag | append: '/' | relative_url }}" class="card-tag">{{ post.tag | capitalize }}</a>
+              {% endif %}
+              <h2 class="card-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h2>
+              {% if post.description %}
+              <p class="card-description">{{ post.description }}</p>
+              {% endif %}
+              {% if post.read_time %}
+              <span class="card-read-time">{{ post.read_time }} min read</span>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CARDS ROW ===== -->
+  {% assign card_posts = site.posts | offset: 3 | limit: 4 %}
+  {% if card_posts.size > 0 %}
+  <section class="cards-section">
+    <div class="container">
+      <p class="section-label">Also in this edition</p>
+      <div class="cards-grid">
+        {% for post in card_posts %}
+          {% include article-card.html post=post %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ===== LATEST POSTS + TAGS ===== -->
+  <section class="latest-section">
+    <div class="container">
+      <div class="latest-grid">
+
+        <div>
+          <p class="section-label">Latest</p>
+          <div class="latest-list">
+            {% assign latest = site.posts | offset: 7 | limit: 6 %}
+            {% for post in latest %}
+            <div class="article-card latest-item">
+              {% if post.image %}
+              <a href="{{ post.url | relative_url }}" class="card-image-link">
+                <div class="card-image">
+                  <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" />
+                </div>
+              </a>
+              {% endif %}
+              <div class="card-body">
+                {% if post.tag %}
+                <a href="{{ '/tag/' | append: post.tag | append: '/' | relative_url }}" class="card-tag">{{ post.tag | capitalize }}</a>
+                {% endif %}
+                <h2 class="card-title">
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h2>
+                {% if post.description %}
+                <p class="card-description">{{ post.description }}</p>
+                {% endif %}
+                {% if post.read_time %}
+                <span class="card-read-time">{{ post.read_time }} min read</span>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <aside class="latest-sidebar">
+          <h3>Browse by Topic</h3>
+          <div class="sidebar-tag-list">
+            <a href="{{ '/tag/politics/' | relative_url }}">Politics</a>
+            <a href="{{ '/tag/economics/' | relative_url }}">Economics</a>
+            <a href="{{ '/tag/analysis/' | relative_url }}">Analysis</a>
+            <a href="{{ '/tag/technical/' | relative_url }}">Technical</a>
+            <a href="{{ '/tag/asia/' | relative_url }}">Asia</a>
+            <a href="{{ '/tag/world/' | relative_url }}">World</a>
+            <a href="{{ '/tag/life/' | relative_url }}">Life's Perspectives</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,3 +1,33 @@
-theme: jekyll-theme-minimal
-title: Tien Thanh's HomePage
-description: test 1234
+title: Thanh's Journal
+description: Perspectives on Politics, Economics, Tech & Life
+baseurl: ""
+url: "https://thanhback0904.github.io"
+author: Thanh
+
+permalink: /:categories/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+
+tags_list:
+  - { slug: "politics", label: "Politics" }
+  - { slug: "analysis", label: "Analysis" }
+  - { slug: "technical", label: "Technical" }
+  - { slug: "life", label: "Life's Perspectives" }
+  - { slug: "economics", label: "Economics" }
+  - { slug: "asia", label: "Asia" }
+  - { slug: "world", label: "World" }
