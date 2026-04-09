@@ -288,6 +288,14 @@ ul { list-style: none; }
   }
 }
 
+/* Standalone browse section (few posts) */
+.browse-section {
+  padding: 2rem 0;
+  .latest-sidebar {
+    max-width: 320px;
+  }
+}
+
 /* ===== ARTICLE CARD SHARED STYLES ===== */
 .article-card { background: $bg; }
 
