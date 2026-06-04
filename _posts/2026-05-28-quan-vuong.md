@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Quân Vương - Niccolo Machiavelli"
-date: 2026-04-17
+date: 2026-05-28
 tag: books         
 description: "Một bài phân tích nhỏ về tác phẩm Quân Vương"
-read_time: 61
+read_time: 64
 featured: true         
 image: /assets/images/machiavelli-portrait-florence-painting.jpg
 ---
@@ -25,8 +25,6 @@ Về tư tưởng, ông là người “đầu tiên” tách khoa học chính 
 
 Cụ thể hơn một chút, Plato cho rằng nhà nước chính là con người nhưng được phóng chiếu lên phạm vi lớn hơn. Ông nói rằng ba phần của linh hồn (lý trí, ý chí và ham muốn) ứng với triết gia - vua, chiến binh và thương nhân. Ông lập luận rằng nhà nước tốt là linh hồn được cai trị bởi ý chí, còn nhà nước xấu thì bị ham muốn chi phối. Chính trị dưới góc nhìn của ông là tâm lý học quy mô lớn, dựa trên cái Thiện (Idea of the Good). Plato không đưa ra quan điểm về quyền lực, hay cách nó hoạt động trong thực tế, mà ông quan tâm đến nhà nước **nên là gì**. 
 
-Cần tham khảo thêm về Aristotle, Agustine cũng như Aquinas. 
-
 Khi bắt đầu đọc tác phẩm này, mình sẽ phải nghiên cứu về câu hỏi: “Chính trị và đạo đức có quan hệ với nhau như nào ?”, “Làm sao để duy trì quyền lực mà không cần tính chính danh ?”.
 
 # **Tình hình Chính trị thời kỳ Machiavelli**
@@ -41,7 +39,7 @@ Khổng Tử cho rằng một vị vua nhân từ, đức hạnh sẽ tự khắ
 
 **Nhân chi sơ, tính bản thiện**. Đây là câu nói nổi tiếng của Mạnh Tử (mặc dù thực tế ông không nói trực tiếp như thế), đây cũng là cái nền mà mọi người cho rằng Nho Giáo hay Khổng Giáo sẽ tạo ra một xã hội tốt, vì ở đó mọi người ngầm hiểu rằng ai cũng là người tốt, và một cá nhân sẽ không thể làm điều xấu vì bất kỳ lý do gì vì họ không có ác tâm, và nếu họ có lầm đường thì chỉ cần có một đấng minh chủ chiếu rọi thì họ sẽ quay về bản chất lương thiện ban đầu. Tuân Tử lại có ý kiến ngược lại. **Nhân chi sơ, tính bản ác** (một lần nữa, Tuân Tử không trực tiếp nói vậy). Ông nói rằng con người tự nhiên bị thúc đẩy bởi ham muốn và tư lợi, từ đó cần phải được uốn nắn bằng giáo dục và lễ nghĩa. Điều này có nghĩa rằng , nếu trẻ em từ sớm không được dạy dỗ, chỉ bảo bởi giáo dục Nho giáo, chúng sẽ trở thành mối nguy lớn cho xã hội. Tuân Tử dùng lễ trị dân, còn Khổng Tử lại dùng nghĩa.
 
-Học trò của Tuân Tử, Hàn Phi Tử đã đi xa hơn về mặt chính trị thuần tuý khi đề xuất ra Pháp Gia. Ông không đặt niềm tin ở đạo đức cá nhân, mà ông cho rằng chỉ có các quy tắc có hệ thống, không ưu tiên bất kỳ ai mới có thể đảm bảo tính ổn định cho một nhà nước. Ba khái niệm ông đề ra là Fa (pháp luật), Shu (phương pháp/thuật trị) và Shi (quyền thế). Luật pháp đặt ra phải rõ ràng, công khai và áp dụng cho tất cả mọi người, tức là không có bất kỳ cả nhân nào kể cả quý tộc được đứng trên luật pháp. Điều đó tức là luật pháp được đặt ra dựa trên lợi ích của người cai trị, được dùng như một công cụ kiểm soát quyền lực. Tại sao lại so sánh ông với Machiavelli ? Lý do đơn giản là vì cả hai đều tách đạo đức thuần tuý ra khỏi chính trị, cụ thể hơn cả hai tin rằng mọi hành động đều là hợp lý nếu nó phục vụ cho mục đích cai trị, kể cả chúng có “vô đạo đức” đến đâu. https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/han-fei-zi
+Học trò của Tuân Tử, Hàn Phi Tử đã đi xa hơn về mặt chính trị thuần tuý khi đề xuất ra Pháp Gia. Ông không đặt niềm tin ở đạo đức cá nhân, mà ông cho rằng chỉ có các quy tắc có hệ thống, không ưu tiên bất kỳ ai mới có thể đảm bảo tính ổn định cho một nhà nước. Ba khái niệm ông đề ra là Fa (pháp luật), Shu (phương pháp/thuật trị) và Shi (quyền thế). Luật pháp đặt ra phải rõ ràng, công khai và áp dụng cho tất cả mọi người, tức là không có bất kỳ cả nhân nào kể cả quý tộc được đứng trên luật pháp. Điều đó tức là luật pháp được đặt ra dựa trên lợi ích của người cai trị, được dùng như một công cụ kiểm soát quyền lực. Tại sao lại so sánh ông với Machiavelli ? Lý do đơn giản là vì cả hai đều tách đạo đức thuần tuý ra khỏi chính trị, cụ thể hơn cả hai tin rằng mọi hành động đều là hợp lý nếu nó phục vụ cho mục đích cai trị, kể cả chúng có “vô đạo đức” đến đâu.
 
 Nói một cách giản lược, có phần đơn giản hoá tư tưởng của hai con người này, ta nói rằng Machiavelli viết về người cai trị, điều này không quá khó hiểu khi bản thân tác phẩm tên là “Quân Vương”. Ông cho rằng một chế độ tồn tại hay không phụ thuộc vào khả năng của người cầm quyền, trong khi đó Hàn Phi Tử lại đặt ra lý thuyết về hệ thống cai trị, ông không nói về các đức tính của người cai trị, điều đó Nho Giáo đã làm, ông nói về một hệ thống mà ở đó bất kể người cai trị là ai, quyền lực vẫn sẽ được duy trì.
 
@@ -207,6 +205,8 @@ Khi Lưu Bị chết, ông có nói trước phút lâm chung rằng:
 
 > Cúc cung tận tuỵ, đến chết mới thôi.
 > 
+
+
 # **Chương 23: Làm thế nào để tránh những kẻ xu nịnh ?**
 
 Có thể nói rằng, từ 1300 năm trước khi Machiavelli viết ra Quân Vương, nói về quân sư, thì ở phía bên kia lục địa đã có một người là minh chứng sống phản đối lại luận điểm của Machiavelli. Nhưng chúng ta phải nói rằng, Khổng Minh sinh trong thời kỳ Nho giáo, đạo đức và tư tưởng sống bị ảnh hưởng bởi Nho giáo. Bản thân ông cũng là người nói rằng mình muốn được giống như Quản Trọng, Nhạc Nghị, ông là một người có hệ tư tưởng đạo đức rõ ràng, thà chết chứ không sống ngược lại với tư tưởng đó. Đây là điều Machiavelli đã không nhìn được do quan điểm của ông về con người và về thực tế thời ông sống là một xã hội sống vì lợi ích cá nhân.
@@ -218,3 +218,28 @@ Có những trường hợp nịnh thần khác nhau mà mình muốn nói ở �
 Thứ hai là những kẻ lợi dụng cái tôi của Quân vương để có lợi cho bản thân. Những tên này nói dối không phải vì sợ nói thật, cũng không phải là sợ Quân vương, mà họ lợi dụng, vuốt ve cái tôi của nhà vua để kiểm soát ông ta, đem lại quyền lực và của cải cho riêng mình. Không hiếm những triều đại Trung Quốc mà bọn gian thần, thái giám lộng hành, những trung thần kỳ tài ngút trời phải lấy cái chết của bản thân ra để thức tỉnh Quân vương trước khi quá muộn. Những kẻ nịnh thần này sẽ đưa chủ của mình vào các cuộc ăn chơi xa đoạ, những dục vọng được đáp ứng dễ dàng, không có hồi kết. Và vì việc nước là thứ quá khó để suy nghĩ khi họ ngập trong sung sướng như vậy, bọn thái giám là những kẻ gần vua nhất sẽ có tác động cực lớn với vua. Tại sao lại nói như thế ? Nên biết rằng trong một cuộc ăn chơi, bọn thái giám là bọn kiểm soát bên ngoài lẫn bên trong, mọi thông tin được đưa vào cho vua đọc đều phải đi qua thái giám. Từ đó bọn chúng nắm trong tay quyền diễn giải, cắt xén thông tin, che giấu sự thực để điều hướng quyết định của Quân vương sao cho khớp với mong muốn của bọn chúng. Trong một môi trường thiếu thông tin và đang chìm trong hưởng lạc, không khó để Quân vương đưa ra những quyết định sai lầm. 
 
 Vậy thì chúng ta có thể thấy rằng, môi trường tạo ra những kẻ xu nịnh là nơi mà việc nói sự thật (nhưng trái với điều Quân vương muốn nghe) bị trừng phạt nặng nề. Một việc đơn giản hơn cả để giải quyết vấn đề này đó là làm điều ngược lại, tức trừng phạt những kẻ nói dối và tưởng thưởng cho kẻ nói ra sự thật. Nhưng điều này không giải quyết cái tôi muốn được vuốt ve của Quân vương, nên ông ta có thể làm cách khác, đó là tạo ra vòng tròn những cá nhân mà ông tin tưởng, trao thông tin cho họ, chỉ cho phép họ nói thật và chỉ sự thật về những điều mà ông hỏi, và chỉ những điều ông hỏi mà thôi. Ông phải nắm thế chủ động, tức là tự mình đi tìm kiếm quan điểm chứ không bị động để kẻ khác đến đưa cho mình, để tạo sự uy quyền và hạn chế những kẻ gian thần có ý định tiếp cận. Tuy vậy ông cũng phải thể hiện ra rằng mình không bị xúc phạm bởi sự thật, nhưng cũng không ai có thể tuỳ tiện nói sự thật với ông. Bởi vì ông phải duy trì sự sợ hãi của quần thần ở một mức độ nào đó để giữ vững quyền lực của mình. Tuy vậy dù cho phương pháp có tốt đến đâu, mà bản thân Quân vương bị che mờ mắt bởi thiên kiến của bản thân thì kết cục vẫn sẽ là các quyết định sai lầm.
+
+
+# **Chương 24: Các quân vương nước Ý đã từng đánh mất vương quốc**
+
+Chương này khá ngắn (~ 2 trang). Luận điểm cũng chỉ có hai điều: 1. Tân vương có lợi thế hơn Quân vương thế tập (được truyền ngôi) do con người chú tâm đến hiện tại thay vì quá khứ, và tân vương thì bị người dân soi kỹ hơn, nên nếu người đó có thể đáp ứng được mong đợi của dân chúng, thì hắn sẽ có được sự yêu mến gấp bội và 2. Các quân vương mất nước là do sự bất tài và lười biếng của họ, chứ không phải ro vận rủi hay các yếu tố khác. Cụ thể hơn là do quản lý quân đội yếu kém, và không được lòng người dân. Ông chỉ trích các Quân vương mất nước do chính sự lười biếng của mình, rằng khi thời bình thì không lo lắng về những việc có thể xảy ra trong thời loạn, mà đến khi có chuyện cũng chỉ lo bỏ chạy chứ không suy nghĩ đến việc tự vệ, và còn ôm hy vọng rằng dân chúng sẽ cầu xin mình quay trở về sau khi bị quân xâm lược chiếm đóng. 
+
+Kết lại chương này, ông nói: chỉ có chính bản thân Quân vương mới đáng tin cậy nhất, không nên mong đợi ở các yếu tố bên ngoài. 
+
+# **Chương 25: Số phận ảnh hưởng ra sao đến sự nghiệp, và đương đầu với số phận như nào ?** 
+
+Ở thời của Machiavelli, thuyết số mệnh vẫn còn phổ biến. Thuyết này cho rằng cuộc sống chúng ta đã được quyết định từ trước bởi các bậc cao hơn, và dù chúng ta có nhận thức được hay không thì cũng không thể tránh khỏi sự sắp đặt đó . Vì thế trong cuộc đời của các vị Quân vương, ngoài tài năng sẵn có thì chúng ta thường xem xét đến may mắn của họ nữa. 
+
+Trong suy nghĩ của phần lớn con người, chúng ta đối đầu với số phận, rằng may mắn sẽ như một người bạn đồng hành với chúng ta để vượt qua những khó khăn, thử thách. Tức là ta coi may mắn là một tác nhân bên ngoài mà ta không kiểm soát được, mà nó giống như một “phước lành” đến với chúng ta một cách ngẫu nhiên. Machiavelli lại không nói như thế. Fortuna (may mắn) là trọng tài của một nửa hành động của chúng ta, và nó vẫn để lại cho chúng ta quyền điều khiển nửa còn lại. Chúng ta phải nghĩ theo hướng khác rằng, nếu như phủ định hoàn toàn may mắn, thì những sự sụp đổ của các Quân vương vĩ đại là không thể giải thích được. Còn nếu coi cuộc đời đã được an bài, thì chả cần phải viết ra Quân vương làm gì, vì ai có số được làm vua thì sẽ làm vua, không thể khác được. 
+
+Vậy thì chúng ta có thể làm thế nào để Fortuna có lợi cho mình ? Machiavelli nói về số phận như dòng nước cuốn trôi tất cả mọi thứ trên đường nó đi qua, khiến cho con người khuất phục trước nó. Nhưng khi cơn lũ qua đi, con người có thể đắp đê, chuẩn bị để điều hướng dòng chảy. Đó chính là điều quan trọng mà Machiavelli muốn nói. Dù cho ta không thể kiểm soát hoàn toàn số phận, ta cũng có thể khiến nó đi theo ý của mình, nó sẽ nguy hiểm ở những nơi mà không được chuẩn bị để đón chờ nó. Tức rằng những hành động chúng ta đang làm mỗi ngày đều chính là đang đắp một con đê, chuẩn bị một con đường để cho cơn lũ số phận, nếu có xảy đến thì cũng sẽ đoán trước được phương hướng. Và may mắn chỉ đến một lần trong đời, nên khi nó xảy ra hãy nắm thật chặt cơ hội và đừng do dự, không được thụ động. 
+
+Chương 26: Lời kêu gọi giải phóng nước Ý khỏi những kẻ man rợ sẽ không được đề cập.
+
+Cuối cùng cũng kết thúc được quyển này, tính từ lúc mình bắt đầu mở nó ra lần đầu là tháng 4/2026, nhưng thực tế đọc nghiêm túc thì đến tầm giữa tháng 5 mình mới bắt đầu làm. Quyển này có một vài quan điểm đạo đức xung đột với mình, chủ yếu là việc Quân vương nên làm để giữ vững quyền lực. Nhưng qua việc đó mình cũng nhận ra được mình suy nghĩ và coi trọng điều gì. 
+
+Hành trình này quả thực là không ngắn, cũng không quá dài, nhưng do nhiều yếu tố khác mà cũng có cảm giác hơi mệt. Lần đầu cảm thấy việc đọc một quyển sách nó lại mệt mỏi như này, cơ mà cũng rút ra được nhiều thứ hay ho cho bản thân, vậy thì coi như cũng là lãi rồi nhỉ. Những chương không được đề cập đến thì có chương mình đã nói là không đọc, nhưng phần lớn là do lười và quá mệt, nếu có thời gian mình sẽ bổ sung (khả năng cao là kết thúc rồi đấy).
+
+Cảm ơn bất kỳ ai đang đọc những dòng này, mong là các bạn có thể học được nhiều điều bổ ích từ quyển sách này giống mình. 
+
+Nguồn ảnh: [The Incredible Life of Machiavelli, Author of ‘The Prince’](https://www.thecollector.com/niccolo-machiavelli-life/)
