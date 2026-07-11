@@ -12,6 +12,7 @@ motto: "Ghi lại những trang sách đã đọc."
 byline: "Tien Thanh"
 place: "HÀ NỘI"
 issue: "Số 1"
+hide_masthead: true
 ---
 
 

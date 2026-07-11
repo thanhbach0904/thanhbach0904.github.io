@@ -2,6 +2,7 @@
 layout: default
 ---
 <article class="vintage-post">
+  {% unless page.hide_masthead %}
   <div class="vintage-masthead">
     <div class="vintage-masthead-top">
       <span>{{ page.issue | default: "Tập I · Số 1" }}</span>
@@ -14,6 +15,7 @@ layout: default
     <hr class="vintage-rule-thick" />
     <hr class="vintage-rule-thin" />
   </div>
+  {% endunless %}
 
   <header class="vintage-headline">
     <h2>{{ page.title }}</h2>

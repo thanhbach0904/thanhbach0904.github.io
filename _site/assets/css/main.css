@@ -184,7 +184,7 @@ ul { list-style: none; }
 /* ---- Headline / byline ---- */
 .vintage-headline { text-align: center; margin-bottom: 1.5rem; }
 .vintage-headline h2 { font-family: "Playfair Display", Georgia, serif; font-size: 2rem; line-height: 1.25; font-variant: small-caps; margin-bottom: 0.5rem; }
-.vintage-headline .vintage-byline { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.8rem; font-variant: small-caps; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+.vintage-headline .vintage-byline { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
 .vintage-headline .vintage-rule-short { border: none; border-top: 1px solid rgba(26, 22, 18, 0.75); width: 30%; margin: 0 auto; }
 .vintage-headline .vintage-rule-shorter { border: none; border-top: 1px solid rgba(26, 22, 18, 0.75); width: 16%; margin: 0.4rem auto 0; }
 
@@ -216,7 +216,7 @@ ul { list-style: none; }
 /* ---- Closing rule + colophon ---- */
 .vintage-closing-rule { border: none; border-top: 1px solid rgba(26, 22, 18, 0.75); margin: 2.5rem 0 0.6rem; }
 
-.vintage-colophon { text-align: center; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.72rem; font-variant: small-caps; letter-spacing: 0.04em; color: #666666; }
+.vintage-colophon { text-align: center; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #666666; }
 
 /* ---- Related reading (optional, styled to recede) ---- */
 .vintage-related { max-width: 620px; margin: 2.5rem auto 0; text-align: center; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; }
@@ -225,6 +225,14 @@ ul { list-style: none; }
 .vintage-related li { margin-bottom: 0.35rem; }
 .vintage-related a { font-size: 0.88rem; color: #1a1612; border-bottom: 1px solid rgba(26, 22, 18, 0.25); }
 .vintage-related a:hover { color: #E3120B; border-color: #E3120B; }
+
+/* ---- Site header, restyled to match the paper (scoped to vintage posts only via body.vintage-page — leaves every other page as-is) ---- */
+body.vintage-page .site-header { border-bottom: 1px solid rgba(26, 22, 18, 0.75); box-shadow: none; }
+body.vintage-page .site-logo { font-family: "Playfair Display", Georgia, serif; color: #1a1612; }
+body.vintage-page .site-logo:hover { color: #1a1612; text-decoration: underline; }
+body.vintage-page .site-nav a { font-family: "EB Garamond", "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 600; color: #1a1612; border-right-color: rgba(26, 22, 18, 0.25); }
+body.vintage-page .site-nav a:first-child { border-left-color: rgba(26, 22, 18, 0.25); }
+body.vintage-page .site-nav a:hover, body.vintage-page .site-nav a.active { color: #1a1612; text-decoration: underline; }
 
 /* ---- Responsive: collapse to one column, reflows far better than the fixed-width PDF this layout is ported from ---- */
 @media (max-width: 720px) { .vintage-post { padding: 1.75rem 1.25rem 3rem; }

@@ -68,9 +68,10 @@ $vintage-display: 'Playfair Display', Georgia, serif;
 
   .vintage-byline {
     font-family: $sans;
-    font-size: 0.8rem;
-    font-variant: small-caps;
-    letter-spacing: 0.04em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     margin-bottom: 0.4rem;
   }
 
@@ -198,8 +199,9 @@ $vintage-display: 'Playfair Display', Georgia, serif;
   text-align: center;
   font-family: $sans;
   font-size: 0.72rem;
-  font-variant: small-caps;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: $mid-gray;
 }
 
@@ -226,6 +228,33 @@ $vintage-display: 'Playfair Display', Georgia, serif;
     color: $vintage-ink;
     border-bottom: 1px solid $vintage-rule-light;
     &:hover { color: $red; border-color: $red; }
+  }
+}
+
+/* ---- Site header, restyled to match the paper (scoped to vintage
+   posts only via body.vintage-page — leaves every other page as-is) ---- */
+body.vintage-page {
+  .site-header {
+    border-bottom: 1px solid $vintage-rule;
+    box-shadow: none;
+  }
+
+  .site-logo {
+    font-family: $vintage-display;
+    color: $vintage-ink;
+    &:hover { color: $vintage-ink; text-decoration: underline; }
+  }
+
+  .site-nav a {
+    font-family: $vintage-serif;
+    font-weight: 600;
+    color: $vintage-ink;
+    border-right-color: $vintage-rule-light;
+    &:first-child { border-left-color: $vintage-rule-light; }
+    &:hover, &.active {
+      color: $vintage-ink;
+      text-decoration: underline;
+    }
   }
 }
 

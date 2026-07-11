@@ -13,7 +13,7 @@
   {% endif %}
   {% seo %}
 </head>
-<body>
+<body{% if page.layout == 'vintage-post' %} class="vintage-page"{% endif %}>
   {% include header.html %}
   <main>
     {{ content }}
