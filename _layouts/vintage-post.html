@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<article class="vintage-post">
+  <div class="vintage-masthead">
+    <div class="vintage-masthead-top">
+      <span>{{ page.issue | default: "Tập I · Số 1" }}</span>
+      <span>{{ page.place | default: "HÀ NỘI" }}</span>
+      <span>{{ page.date | date: "%-d Tháng %-m, %Y" }}</span>
+    </div>
+    <hr class="vintage-rule-thin" />
+    <h1 class="vintage-name">{{ page.masthead | default: site.title }}</h1>
+    {% if page.motto %}<p class="vintage-motto">&ldquo;{{ page.motto }}&rdquo;</p>{% endif %}
+    <hr class="vintage-rule-thick" />
+    <hr class="vintage-rule-thin" />
+  </div>
+
+  <header class="vintage-headline">
+    <h2>{{ page.title }}</h2>
+    <hr class="vintage-rule-short" />
+    {% if page.byline %}
+    <p class="vintage-byline">Bởi {{ page.byline }}</p>
+    <hr class="vintage-rule-shorter" />
+    {% endif %}
+  </header>
+
+  {% if page.image %}
+  <div class="vintage-hero">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" />
+  </div>
+  {% endif %}
+
+  <div class="vintage-columns">
+    {{ content }}
+  </div>
+
+  <hr class="vintage-closing-rule" />
+  <p class="vintage-colophon">{{ page.masthead | default: site.title }} &middot; {{ page.date | date: "%-d Tháng %-m, %Y" }}</p>
+
+  {% assign related_posts = site.posts | where: "tag", page.tag %}
+  {% if related_posts.size > 1 %}
+  <aside class="vintage-related">
+    <h3>Thêm về {{ page.tag | capitalize }}</h3>
+    <ul>
+      {% for related_post in related_posts limit:4 %}
+        {% unless related_post.url == page.url %}
+        <li><a href="{{ related_post.url | relative_url }}">{{ related_post.title }}</a></li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </aside>
+  {% endif %}
+</article>

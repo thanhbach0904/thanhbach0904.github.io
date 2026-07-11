@@ -1,12 +1,17 @@
 ---
-layout: post
+layout: vintage-post
 title: "Quân Vương - Niccolo Machiavelli"
 date: 2026-05-28
-tag: books         
+tag: books
 description: "Một bài phân tích nhỏ về tác phẩm Quân Vương"
 read_time: 64
-featured: true         
+featured: true
 image: /assets/images/machiavelli-portrait-florence-painting.jpg
+masthead: "28/05/2026"
+motto: "Ghi lại những trang sách đã đọc."
+byline: "Tien Thanh"
+place: "HÀ NỘI"
+issue: "Số 1"
 ---
 
 

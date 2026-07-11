@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/* ===== VARIABLES ===== */
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; color: #333333; background: #ffffff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+a { color: inherit; text-decoration: none; }
+
+a:hover { text-decoration: none; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+ul { list-style: none; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ===== HEADER ===== */
+.site-header { border-bottom: 3px solid #E3120B; background: #ffffff; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06); }
+
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding-top: 0.8rem; padding-bottom: 0.8rem; gap: 1rem; }
+
+.site-logo { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: 1.6rem; font-weight: 700; color: #111111; letter-spacing: -0.5px; white-space: nowrap; flex-shrink: 0; }
+.site-logo:hover { color: #E3120B; }
+
+.site-nav { display: flex; gap: 0; flex-wrap: wrap; }
+.site-nav a { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #333333; padding: 0.4rem 0.75rem; border-right: 1px solid #e0e0e0; transition: color 0.15s; }
+.site-nav a:first-child { border-left: 1px solid #e0e0e0; }
+.site-nav a:hover, .site-nav a.active { color: #E3120B; }
+
+.nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #333333; padding: 0.2rem 0.4rem; }
+
+/* ===== HOMEPAGE ===== */
+.home-page { padding-bottom: 3rem; }
+
+/* Posts grid (2 columns) */
+.posts-section { padding: 2rem 0; }
+
+.posts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+.post-card { border: 1px solid #e0e0e0; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+.post-card:hover { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07); }
+.post-card .card-image { height: 220px; overflow: hidden; }
+.post-card .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.post-card .card-image:hover img { transform: scale(1.02); }
+.post-card .card-body { padding: 1.25rem 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.post-card .card-title { font-size: 1.25rem; line-height: 1.3; }
+.post-card .card-description { font-size: 0.9rem; margin-top: 0.4rem; }
+.post-card .card-footer { margin-top: auto; padding-top: 0.75rem; display: flex; align-items: center; gap: 1rem; }
+.post-card .card-date { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.78rem; color: #999999; }
+
+/* Browse by Topic */
+.browse-section { padding: 2rem 0; }
+
+.latest-sidebar { max-width: 320px; }
+.latest-sidebar h3 { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999999; border-top: 3px solid #e0e0e0; padding-top: 0.6rem; margin-bottom: 1rem; }
+.latest-sidebar .sidebar-tag-list { display: flex; flex-direction: column; gap: 0; }
+.latest-sidebar .sidebar-tag-list a { display: block; padding: 0.75rem 0; border-bottom: 1px solid #e0e0e0; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.9rem; font-weight: 600; color: #333333; transition: color 0.15s; }
+.latest-sidebar .sidebar-tag-list a:hover { color: #E3120B; }
+
+.section-label { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999999; border-top: 3px solid #e0e0e0; padding-top: 0.6rem; margin-bottom: 1.25rem; }
+
+/* ===== ARTICLE CARD SHARED STYLES ===== */
+.article-card { background: #ffffff; }
+
+.card-tag { display: inline-block; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #E3120B; margin-bottom: 0.35rem; transition: color 0.15s; }
+.card-tag:hover { color: #b50e08; text-decoration: underline; }
+
+.card-title { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 700; color: #111111; line-height: 1.28; margin-bottom: 0.35rem; }
+.card-title a { color: #111111; transition: color 0.15s; }
+.card-title a:hover { color: #E3120B; }
+
+.card-description { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.88rem; color: #666666; line-height: 1.5; margin-bottom: 0.5rem; }
+
+.card-read-time { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.75rem; color: #999999; font-style: italic; }
+
+/* ===== TAG PAGE ===== */
+.tag-page { padding: 2rem 0 3rem; }
+
+.tag-header { padding: 1.5rem 0 1rem; border-bottom: 3px solid #E3120B; margin-bottom: 2rem; }
+.tag-header .tag-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #E3120B; margin-bottom: 0.4rem; }
+.tag-header h1 { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: 2.2rem; font-weight: 700; color: #111111; }
+.tag-header p { font-size: 0.95rem; color: #666666; margin-top: 0.4rem; }
+
+.tag-posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem 1.5rem; }
+.tag-posts-grid .article-card { border-bottom: 1px solid #e0e0e0; padding-bottom: 1.5rem; }
+.tag-posts-grid .article-card .card-image { height: 180px; overflow: hidden; margin-bottom: 0.75rem; }
+.tag-posts-grid .article-card .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.tag-posts-grid .article-card .card-image:hover img { transform: scale(1.03); }
+.tag-posts-grid .article-card .card-title { font-size: 1.05rem; }
+
+/* ===== POST PAGE ===== */
+.post-page { padding-bottom: 4rem; }
+
+.post-header { background: #ffffff; padding: 2.5rem 0 1.5rem; border-bottom: 1px solid #e0e0e0; }
+.post-header .post-tag-label { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #E3120B; margin-bottom: 0.75rem; }
+.post-header .post-tag-label:hover { text-decoration: underline; }
+.post-header .post-title { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: 2.4rem; font-weight: 700; color: #111111; line-height: 1.2; max-width: 720px; margin-bottom: 0.75rem; }
+.post-header .post-description { font-size: 1.1rem; color: #666666; max-width: 680px; line-height: 1.55; margin-bottom: 1rem; }
+.post-header .post-meta { display: flex; gap: 1rem; font-size: 0.8rem; color: #999999; }
+.post-header .post-modified { font-style: italic; }
+.post-header .post-modified::before { content: "·"; margin-right: 0; }
+.post-header .post-read-time { font-style: italic; }
+
+.post-hero-image { padding: 1.5rem 0; border-bottom: 1px solid #e0e0e0; }
+.post-hero-image img { width: 100%; max-height: 460px; object-fit: cover; }
+
+.post-container { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; padding-top: 2rem; }
+
+.post-content { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 1.02rem; line-height: 1.8; color: #333333; }
+.post-content h2 { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: 1.5rem; margin: 2rem 0 0.75rem; color: #111111; }
+.post-content h3 { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: #111111; }
+.post-content p { margin-bottom: 1.25rem; }
+.post-content blockquote { border-left: 3px solid #E3120B; margin: 1.5rem 0; padding: 0.5rem 1.25rem; color: #666666; font-style: italic; font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: 1.1rem; }
+.post-content blockquote p { margin-bottom: 0; }
+.post-content a { color: #E3120B; text-decoration: underline; }
+.post-content a:hover { color: #b50e08; }
+.post-content code { font-family: 'SFMono-Regular', Consolas, monospace; background: #f9f9f7; padding: 0.15em 0.4em; font-size: 0.88em; border-radius: 2px; }
+.post-content pre { background: #1e1e1e; color: #d4d4d4; padding: 1.25rem; border-radius: 4px; overflow-x: auto; margin-bottom: 1.25rem; }
+.post-content pre code { background: none; padding: 0; color: inherit; font-size: 0.9rem; }
+.post-content ul, .post-content ol { margin: 0 0 1.25rem 1.5rem; }
+.post-content ul li, .post-content ol li { margin-bottom: 0.4rem; }
+.post-content ul { list-style: disc; }
+.post-content ol { list-style: decimal; }
+.post-content img { margin: 1.5rem 0; border-radius: 2px; }
+.post-content hr { border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0; }
+
+.post-sidebar .sidebar-title { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999999; border-top: 3px solid #e0e0e0; padding-top: 0.6rem; margin-bottom: 0.75rem; }
+.post-sidebar .sidebar-posts li { border-bottom: 1px solid #e0e0e0; }
+.post-sidebar .sidebar-posts li a { display: block; padding: 0.75rem 0; }
+.post-sidebar .sidebar-posts li a:hover .sidebar-post-title { color: #E3120B; }
+.post-sidebar .sidebar-post-tag { display: block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #E3120B; margin-bottom: 0.2rem; }
+.post-sidebar .sidebar-post-title { display: block; font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: 0.9rem; color: #111111; line-height: 1.35; transition: color 0.15s; }
+.post-sidebar .sidebar-read-time { display: block; font-size: 0.72rem; color: #999999; font-style: italic; margin-top: 0.2rem; }
+
+/* ===== FOOTER ===== */
+.site-footer { background: #111111; color: #ccc; padding: 2.5rem 0 0; margin-top: 3rem; }
+
+.footer-inner { display: grid; grid-template-columns: 1fr auto; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #333; }
+
+.footer-logo { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-size: 1.4rem; font-weight: 700; color: #fff; display: block; margin-bottom: 0.5rem; }
+.footer-logo:hover { color: #E3120B; }
+
+.footer-tagline { font-size: 0.85rem; color: #888; }
+
+.footer-links h4 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 0.75rem; }
+.footer-links ul li { margin-bottom: 0.4rem; }
+.footer-links ul li a { font-size: 0.88rem; color: #ccc; transition: color 0.15s; }
+.footer-links ul li a:hover { color: #E3120B; }
+
+.footer-bottom { padding: 1rem 0; }
+.footer-bottom p { font-size: 0.78rem; color: #555; text-align: center; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) { .posts-grid { gap: 1.5rem; }
+  .tag-posts-grid { grid-template-columns: repeat(2, 1fr); }
+  .post-container { grid-template-columns: 1fr; }
+  .post-sidebar { border-top: 1px solid #e0e0e0; padding-top: 1.5rem; }
+  .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; } }
+@media (max-width: 600px) { .site-logo { font-size: 1.3rem; }
+  .site-nav { display: none; flex-direction: column; background: #ffffff; border-top: 1px solid #e0e0e0; width: 100%; position: absolute; left: 0; top: 100%; z-index: 99; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); }
+  .site-nav a { border-right: none; border-bottom: 1px solid #e0e0e0; padding: 0.7rem 1.5rem; }
+  .site-nav a:first-child { border-left: none; }
+  .site-nav.open { display: flex; }
+  .nav-toggle { display: block; }
+  .site-header { position: relative; }
+  .header-inner { flex-wrap: wrap; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .post-title { font-size: 1.7rem; }
+  .tag-posts-grid { grid-template-columns: 1fr; } }
+/* ===== VINTAGE NEWSPAPER POST LAYOUT ===== Scoped entirely under .vintage-post — opt-in per post via `layout: vintage-post`, does not affect the default post design. Ported from essays/thien-tang.tex (XeLaTeX old-newspaper essay). */
+.vintage-post { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; color: #1a1612; font-family: "EB Garamond", "Playfair Display", Georgia, "Times New Roman", serif; }
+
+/* ---- Masthead ---- */
+.vintage-masthead { text-align: center; margin-bottom: 2.2rem; }
+.vintage-masthead .vintage-masthead-top { display: flex; justify-content: space-between; gap: 0.75rem; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #1a1612; padding-bottom: 0.5rem; }
+.vintage-masthead .vintage-name { font-family: "Playfair Display", Georgia, serif; font-size: 2.6rem; letter-spacing: 0.02em; text-transform: uppercase; margin: 0.3rem 0 0.2rem; }
+.vintage-masthead .vintage-motto { font-style: italic; font-size: 0.92rem; margin-bottom: 0.5rem; }
+.vintage-masthead .vintage-rule-thin { border: none; border-top: 1px solid rgba(26, 22, 18, 0.75); margin: 0; }
+.vintage-masthead .vintage-rule-thick { border: none; border-top: 3px solid rgba(26, 22, 18, 0.75); margin: 3px 0 0; }
+
+/* ---- Headline / byline ---- */
+.vintage-headline { text-align: center; margin-bottom: 1.5rem; }
+.vintage-headline h2 { font-family: "Playfair Display", Georgia, serif; font-size: 2rem; line-height: 1.25; font-variant: small-caps; margin-bottom: 0.5rem; }
+.vintage-headline .vintage-byline { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.8rem; font-variant: small-caps; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+.vintage-headline .vintage-rule-short { border: none; border-top: 1px solid rgba(26, 22, 18, 0.75); width: 30%; margin: 0 auto; }
+.vintage-headline .vintage-rule-shorter { border: none; border-top: 1px solid rgba(26, 22, 18, 0.75); width: 16%; margin: 0.4rem auto 0; }
+
+/* ---- Hero photo ---- */
+.vintage-hero { margin: 0 0 2rem; }
+.vintage-hero img { width: 100%; max-height: 420px; object-fit: cover; border: 1px solid rgba(26, 22, 18, 0.25); filter: sepia(12%) contrast(1.02); }
+
+/* ---- Two-column body copy ---- */
+.vintage-columns { column-count: 2; column-gap: 2.4rem; column-rule: 1px solid rgba(26, 22, 18, 0.25); font-size: 1.05rem; line-height: 1.75; text-align: justify; hyphens: auto; /* chapter/section subheads for posts that keep `#`/`##` headings rather than plain asterism breaks (e.g. analytical pieces) */ /* asterism section break, in place of `# Heading` */ }
+.vintage-columns p { margin: 0 0 1.1em; text-indent: 1.2em; }
+.vintage-columns > p:first-of-type { text-indent: 0; }
+.vintage-columns > p:first-of-type::first-letter { font-family: "Playfair Display", Georgia, serif; float: left; font-size: 3.6em; line-height: 0.78; padding-right: 0.09em; padding-top: 0.04em; }
+.vintage-columns em { font-style: italic; }
+.vintage-columns strong { font-weight: 700; }
+.vintage-columns h1, .vintage-columns h2, .vintage-columns h3 { column-span: all; font-family: "Playfair Display", Georgia, serif; font-variant: small-caps; text-align: center; line-height: 1.3; margin: 1.4em 0 0.8em; text-indent: 0; }
+.vintage-columns h1 { font-size: 1.5em; }
+.vintage-columns h2 { font-size: 1.25em; }
+.vintage-columns h3 { font-size: 1.1em; font-style: italic; }
+.vintage-columns blockquote { column-span: all; max-width: 32em; margin: 1em auto 1.3em; padding: 0 1.4em; border-left: 3px solid rgba(26, 22, 18, 0.25); font-style: italic; text-align: left; text-indent: 0; }
+.vintage-columns blockquote p { text-indent: 0; }
+.vintage-columns ul, .vintage-columns ol { margin: 0 0 1.1em 1.4em; text-indent: 0; }
+.vintage-columns ul li, .vintage-columns ol li { margin-bottom: 0.35em; }
+.vintage-columns ul { list-style: disc; }
+.vintage-columns ol { list-style: decimal; }
+.vintage-columns hr { column-span: all; border: none; height: 1.4em; margin: 0.4em 0 1em; text-align: center; }
+.vintage-columns hr::before { content: "*\00a0\00a0*\00a0\00a0*"; font-family: "EB Garamond", "Playfair Display", Georgia, "Times New Roman", serif; color: #1a1612; }
+.vintage-columns img { width: 100%; border: 1px solid rgba(26, 22, 18, 0.25); margin: 0.5em 0 1.1em; }
+
+/* ---- Closing rule + colophon ---- */
+.vintage-closing-rule { border: none; border-top: 1px solid rgba(26, 22, 18, 0.75); margin: 2.5rem 0 0.6rem; }
+
+.vintage-colophon { text-align: center; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; font-size: 0.72rem; font-variant: small-caps; letter-spacing: 0.04em; color: #666666; }
+
+/* ---- Related reading (optional, styled to recede) ---- */
+.vintage-related { max-width: 620px; margin: 2.5rem auto 0; text-align: center; font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif; }
+.vintage-related h3 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999999; margin-bottom: 0.6rem; }
+.vintage-related ul { display: inline-block; }
+.vintage-related li { margin-bottom: 0.35rem; }
+.vintage-related a { font-size: 0.88rem; color: #1a1612; border-bottom: 1px solid rgba(26, 22, 18, 0.25); }
+.vintage-related a:hover { color: #E3120B; border-color: #E3120B; }
+
+/* ---- Responsive: collapse to one column, reflows far better than the fixed-width PDF this layout is ported from ---- */
+@media (max-width: 720px) { .vintage-post { padding: 1.75rem 1.25rem 3rem; }
+  .vintage-masthead .vintage-name { font-size: 1.9rem; }
+  .vintage-masthead .vintage-masthead-top { flex-direction: column; gap: 0.15rem; text-align: center; }
+  .vintage-headline h2 { font-size: 1.5rem; }
+  .vintage-columns { column-count: 1; column-rule: none; font-size: 1rem; } }
