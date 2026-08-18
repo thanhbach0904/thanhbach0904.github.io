@@ -242,8 +242,8 @@ body.vintage-page .site-nav a:hover, body.vintage-page .site-nav a.active { colo
   .vintage-columns { column-count: 1; column-rule: none; font-size: 1rem; } }
 /* ===== "SÁCH ĐÓNG CHỈ" POST LAYOUT (线装书, 花栏 border) ===== Scoped entirely under .chinese-post — opt-in per post via `layout: chinese-post`, does not affect any other layout. Ported from essays/tay-du.tex (XeLaTeX thread-bound-book mockup). */
 .chinese-post { position: relative; background: #E8E0CC; padding: 2.5rem 1.25rem 4rem; color: #1F1B16; font-family: "Noto Serif", "EB Garamond", Georgia, serif; }
-.chinese-post.has-bg-image::before { content: ''; position: absolute; inset: 0; background-image: var(--chinese-bg-image); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; filter: sepia(25%) saturate(60%) contrast(0.9) brightness(1.08); opacity: 0.32; }
-.chinese-post.has-bg-image::after { content: ''; position: absolute; inset: 0; background: rgba(232, 224, 204, 0.86); }
+.chinese-post.has-bg-image::before { content: ''; position: absolute; inset: 0; background-image: var(--chinese-bg-image); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; filter: sepia(25%) saturate(60%) contrast(0.9) brightness(1.08); opacity: 0.55; }
+.chinese-post.has-bg-image::after { content: ''; position: absolute; inset: 0; background: rgba(232, 224, 204, 0.55); }
 
 /* ---- 花栏 frame: double rule + flower-motif band on all four edges ---- */
 .chinese-frame { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; border: 1px solid #1F1B16; }
@@ -263,7 +263,7 @@ body.vintage-page .site-nav a:hover, body.vintage-page .site-nav a.active { colo
 
 .cf-right { right: -6px; }
 
-.chinese-frame-inner { position: relative; padding: 2.4rem 2.6rem 2.8rem; }
+.chinese-frame-inner { position: relative; padding: 2.4rem 2.6rem 2.8rem; background: rgba(232, 224, 204, 0.72); }
 
 /* ---- Masthead ---- */
 .chinese-masthead { text-align: center; margin-bottom: 2.2rem; }

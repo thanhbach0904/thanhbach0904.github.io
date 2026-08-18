@@ -22,10 +22,11 @@ $cn-flower: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/
   color: $cn-ink;
   font-family: $cn-serif;
 
-  // thumbnail as a faint watermark behind the whole page — frame,
-  // margins and all — not just the text column. Image layer + flat
-  // paper-tone wash, both sitting under everything via z-index
-  // (no gradients, no shadows).
+  // thumbnail as a watermark behind the whole page — frame, margins
+  // and all — not just the text column. A vignette, not a flat fade:
+  // bolder out in the margins, quieted further behind the text itself
+  // (see .chinese-frame-inner's own wash below). No gradients, no
+  // shadows — just two flat, stacked, semi-transparent layers.
   &.has-bg-image {
     &::before {
       content: '';
@@ -38,13 +39,14 @@ $cn-flower: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/
       background-attachment: fixed; // stays put as the page scrolls,
       // instead of stretching thin across the whole (tall) article
       filter: sepia(25%) saturate(60%) contrast(0.9) brightness(1.08);
-      opacity: 0.32;
+      opacity: 0.55;
     }
     &::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(232, 224, 204, 0.86); // giấy dó wash for legibility
+      background: rgba(232, 224, 204, 0.55); // giấy dó wash, kept light
+      // out here — the frame below adds a second wash over the text
     }
   }
 }
@@ -89,6 +91,8 @@ $cn-flower: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/
 .chinese-frame-inner {
   position: relative;
   padding: 2.4rem 2.6rem 2.8rem;
+  background: rgba(232, 224, 204, 0.72); // second wash — keeps the
+  // reading column legible even where the watermark reads strong
 }
 
 /* ---- Masthead ---- */
