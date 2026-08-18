@@ -241,10 +241,12 @@ body.vintage-page .site-nav a:hover, body.vintage-page .site-nav a.active { colo
   .vintage-headline h2 { font-size: 1.5rem; }
   .vintage-columns { column-count: 1; column-rule: none; font-size: 1rem; } }
 /* ===== "SÁCH ĐÓNG CHỈ" POST LAYOUT (线装书, 花栏 border) ===== Scoped entirely under .chinese-post — opt-in per post via `layout: chinese-post`, does not affect any other layout. Ported from essays/tay-du.tex (XeLaTeX thread-bound-book mockup). */
-.chinese-post { background: #E8E0CC; padding: 2.5rem 1.25rem 4rem; color: #1F1B16; font-family: "Noto Serif", "EB Garamond", Georgia, serif; }
+.chinese-post { position: relative; background: #E8E0CC; padding: 2.5rem 1.25rem 4rem; color: #1F1B16; font-family: "Noto Serif", "EB Garamond", Georgia, serif; }
+.chinese-post.has-bg-image::before { content: ''; position: absolute; inset: 0; background-image: var(--chinese-bg-image); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; filter: sepia(25%) saturate(60%) contrast(0.9) brightness(1.08); opacity: 0.32; }
+.chinese-post.has-bg-image::after { content: ''; position: absolute; inset: 0; background: rgba(232, 224, 204, 0.86); }
 
 /* ---- 花栏 frame: double rule + flower-motif band on all four edges ---- */
-.chinese-frame { position: relative; max-width: 900px; margin: 0 auto; border: 1px solid #1F1B16; }
+.chinese-frame { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; border: 1px solid #1F1B16; }
 .chinese-frame::after { content: ''; position: absolute; inset: 6px; border: 1px solid rgba(31, 27, 22, 0.7); pointer-events: none; }
 
 .cf-edge { position: absolute; pointer-events: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22%3E%3Cg fill=%22%231F1B16%22 fill-opacity=%220.45%22%3E%3Ccircle cx=%2212%22 cy=%224%22 r=%222.5%22/%3E%3Ccircle cx=%2219%22 cy=%229%22 r=%222.5%22/%3E%3Ccircle cx=%2216%22 cy=%2217%22 r=%222.5%22/%3E%3Ccircle cx=%228%22 cy=%2217%22 r=%222.5%22/%3E%3Ccircle cx=%225%22 cy=%229%22 r=%222.5%22/%3E%3C/g%3E%3Ccircle cx=%2212%22 cy=%2211%22 r=%221.1%22 fill=%22%23A32C1A%22 fill-opacity=%220.5%22/%3E%3C/svg%3E"); }
@@ -262,9 +264,6 @@ body.vintage-page .site-nav a:hover, body.vintage-page .site-nav a.active { colo
 .cf-right { right: -6px; }
 
 .chinese-frame-inner { position: relative; padding: 2.4rem 2.6rem 2.8rem; }
-.chinese-frame-inner.has-bg-image::before { content: ''; position: absolute; inset: 0; background-image: var(--chinese-bg-image); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; filter: sepia(25%) saturate(65%) contrast(0.92) brightness(1.05); opacity: 0.5; }
-.chinese-frame-inner.has-bg-image::after { content: ''; position: absolute; inset: 0; background: rgba(232, 224, 204, 0.75); }
-.chinese-frame-inner.has-bg-image > * { position: relative; z-index: 1; }
 
 /* ---- Masthead ---- */
 .chinese-masthead { text-align: center; margin-bottom: 2.2rem; }

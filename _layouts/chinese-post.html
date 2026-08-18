@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<article class="chinese-post">
+<article class="chinese-post{% if page.image %} has-bg-image{% endif %}"{% if page.image %} style="--chinese-bg-image: url('{{ page.image | relative_url }}');"{% endif %}>
   <div class="chinese-frame">
     <span class="cf-edge cf-top"></span>
     <span class="cf-edge cf-bottom"></span>
     <span class="cf-edge cf-left"></span>
     <span class="cf-edge cf-right"></span>
 
-    <div class="chinese-frame-inner{% if page.image %} has-bg-image{% endif %}"{% if page.image %} style="--chinese-bg-image: url('{{ page.image | relative_url }}');"{% endif %}>
+    <div class="chinese-frame-inner">
       {% unless page.hide_masthead %}
       <div class="chinese-masthead">
         <div class="chinese-masthead-top">

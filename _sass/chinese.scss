@@ -16,15 +16,43 @@ $cn-mono:    'JetBrains Mono', 'Consolas', 'Courier New', monospace;
 $cn-flower: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22%3E%3Cg fill=%22%231F1B16%22 fill-opacity=%220.45%22%3E%3Ccircle cx=%2212%22 cy=%224%22 r=%222.5%22/%3E%3Ccircle cx=%2219%22 cy=%229%22 r=%222.5%22/%3E%3Ccircle cx=%2216%22 cy=%2217%22 r=%222.5%22/%3E%3Ccircle cx=%228%22 cy=%2217%22 r=%222.5%22/%3E%3Ccircle cx=%225%22 cy=%229%22 r=%222.5%22/%3E%3C/g%3E%3Ccircle cx=%2212%22 cy=%2211%22 r=%221.1%22 fill=%22%23A32C1A%22 fill-opacity=%220.5%22/%3E%3C/svg%3E';
 
 .chinese-post {
+  position: relative;
   background: $cn-giay;
   padding: 2.5rem 1.25rem 4rem;
   color: $cn-ink;
   font-family: $cn-serif;
+
+  // thumbnail as a faint watermark behind the whole page — frame,
+  // margins and all — not just the text column. Image layer + flat
+  // paper-tone wash, both sitting under everything via z-index
+  // (no gradients, no shadows).
+  &.has-bg-image {
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--chinese-bg-image);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; // stays put as the page scrolls,
+      // instead of stretching thin across the whole (tall) article
+      filter: sepia(25%) saturate(60%) contrast(0.9) brightness(1.08);
+      opacity: 0.32;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(232, 224, 204, 0.86); // giấy dó wash for legibility
+    }
+  }
 }
 
 /* ---- 花栏 frame: double rule + flower-motif band on all four edges ---- */
 .chinese-frame {
   position: relative;
+  z-index: 1; // sits above .chinese-post's background watermark, if any
   max-width: 900px;
   margin: 0 auto;
   border: 1px solid $cn-ink;
@@ -61,35 +89,6 @@ $cn-flower: 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/
 .chinese-frame-inner {
   position: relative;
   padding: 2.4rem 2.6rem 2.8rem;
-
-  // thumbnail as a faint background behind the reading area, not a
-  // standalone hero block — image layer + flat paper-tone wash, both
-  // sitting under the text via z-index (no gradients, no shadows)
-  &.has-bg-image {
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: var(--chinese-bg-image);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed; // stays put as the article scrolls,
-      // instead of stretching thin across the whole (tall) text column
-      filter: sepia(25%) saturate(65%) contrast(0.92) brightness(1.05);
-      opacity: 0.5;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(232, 224, 204, 0.75); // giấy dó wash for legibility
-    }
-    > * {
-      position: relative;
-      z-index: 1;
-    }
-  }
 }
 
 /* ---- Masthead ---- */
