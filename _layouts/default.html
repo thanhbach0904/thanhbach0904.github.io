@@ -11,9 +11,12 @@
   {% if page.layout == 'vintage-post' %}
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   {% endif %}
+  {% if page.layout == 'chinese-post' %}
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  {% endif %}
   {% seo %}
 </head>
-<body{% if page.layout == 'vintage-post' %} class="vintage-page"{% endif %}>
+<body{% if page.layout == 'vintage-post' %} class="vintage-page"{% endif %}{% if page.layout == 'chinese-post' %} class="chinese-page"{% endif %}>
   {% include header.html %}
   <main>
     {{ content }}

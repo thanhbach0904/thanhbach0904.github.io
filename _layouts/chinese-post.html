@@ -1,0 +1,72 @@
+---
+layout: default
+---
+<article class="chinese-post">
+  <div class="chinese-frame">
+    <span class="cf-edge cf-top"></span>
+    <span class="cf-edge cf-bottom"></span>
+    <span class="cf-edge cf-left"></span>
+    <span class="cf-edge cf-right"></span>
+
+    <div class="chinese-frame-inner{% if page.image %} has-bg-image{% endif %}"{% if page.image %} style="--chinese-bg-image: url('{{ page.image | relative_url }}');"{% endif %}>
+      {% unless page.hide_masthead %}
+      <div class="chinese-masthead">
+        <div class="chinese-masthead-top">
+          <span>{{ page.issue | default: "Số 1" }}</span>
+          <span>{{ page.place | default: "HÀ NỘI" }}</span>
+          <span>{{ page.date | date: "%-d/%-m/%Y" }}</span>
+        </div>
+        <hr class="chinese-rule-thin" />
+        <hr class="chinese-rule-thin chinese-rule-gap" />
+        <h1 class="chinese-name">{{ page.masthead | default: site.title }}</h1>
+        {% if page.motto %}<p class="chinese-motto">{{ page.motto }}</p>{% endif %}
+        <hr class="chinese-rule-thin chinese-rule-gap" />
+        <hr class="chinese-rule-thin" />
+      </div>
+      {% endunless %}
+
+      <header class="chinese-headline">
+        <h2>{{ page.title }}</h2>
+        <hr class="chinese-rule-short" />
+        {% if page.byline %}
+        <p class="chinese-byline">Bởi {{ page.byline }}{% if page.place %} &middot; {{ page.place }}{% endif %}</p>
+        {% endif %}
+      </header>
+
+      <div class="chinese-columns{% if page.annotations %} has-annotations{% endif %}">
+        <div class="chinese-body">
+          {{ content }}
+          {% assign chop_words = page.seal | default: page.byline | default: site.title | split: " " %}
+          <div class="chinese-chop" aria-hidden="true">
+            <span>{{ chop_words.first | slice: 0, 1 | upcase }}{{ chop_words.last | slice: 0, 1 | upcase }}</span>
+          </div>
+        </div>
+
+        {% if page.annotations %}
+        <aside class="chinese-annotations">
+          {% for note in page.annotations %}
+          <p><strong>({{ forloop.index }})</strong> {{ note }}</p>
+          {% endfor %}
+        </aside>
+        {% endif %}
+      </div>
+
+      <hr class="chinese-closing-rule" />
+      <p class="chinese-colophon">{{ page.masthead | default: site.title }} &middot; {{ page.date | date: "%-d/%-m/%Y" }}</p>
+
+      {% assign related_posts = site.posts | where: "tag", page.tag %}
+      {% if related_posts.size > 1 %}
+      <aside class="chinese-related">
+        <h3>Thêm về {{ page.tag | capitalize }}</h3>
+        <ul>
+          {% for related_post in related_posts limit:4 %}
+            {% unless related_post.url == page.url %}
+            <li><a href="{{ related_post.url | relative_url }}">{{ related_post.title }}</a></li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
+      </aside>
+      {% endif %}
+    </div>
+  </div>
+</article>

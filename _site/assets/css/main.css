@@ -240,3 +240,105 @@ body.vintage-page .site-nav a:hover, body.vintage-page .site-nav a.active { colo
   .vintage-masthead .vintage-masthead-top { flex-direction: column; gap: 0.15rem; text-align: center; }
   .vintage-headline h2 { font-size: 1.5rem; }
   .vintage-columns { column-count: 1; column-rule: none; font-size: 1rem; } }
+/* ===== "SÁCH ĐÓNG CHỈ" POST LAYOUT (线装书, 花栏 border) ===== Scoped entirely under .chinese-post — opt-in per post via `layout: chinese-post`, does not affect any other layout. Ported from essays/tay-du.tex (XeLaTeX thread-bound-book mockup). */
+.chinese-post { background: #E8E0CC; padding: 2.5rem 1.25rem 4rem; color: #1F1B16; font-family: "Noto Serif", "EB Garamond", Georgia, serif; }
+
+/* ---- 花栏 frame: double rule + flower-motif band on all four edges ---- */
+.chinese-frame { position: relative; max-width: 900px; margin: 0 auto; border: 1px solid #1F1B16; }
+.chinese-frame::after { content: ''; position: absolute; inset: 6px; border: 1px solid rgba(31, 27, 22, 0.7); pointer-events: none; }
+
+.cf-edge { position: absolute; pointer-events: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22%3E%3Cg fill=%22%231F1B16%22 fill-opacity=%220.45%22%3E%3Ccircle cx=%2212%22 cy=%224%22 r=%222.5%22/%3E%3Ccircle cx=%2219%22 cy=%229%22 r=%222.5%22/%3E%3Ccircle cx=%2216%22 cy=%2217%22 r=%222.5%22/%3E%3Ccircle cx=%228%22 cy=%2217%22 r=%222.5%22/%3E%3Ccircle cx=%225%22 cy=%229%22 r=%222.5%22/%3E%3C/g%3E%3Ccircle cx=%2212%22 cy=%2211%22 r=%221.1%22 fill=%22%23A32C1A%22 fill-opacity=%220.5%22/%3E%3C/svg%3E"); }
+
+.cf-top, .cf-bottom { left: 16px; right: 16px; height: 13px; background-repeat: repeat-x; background-size: 26px 13px; }
+
+.cf-top { top: -6px; }
+
+.cf-bottom { bottom: -6px; }
+
+.cf-left, .cf-right { top: 16px; bottom: 16px; width: 13px; background-repeat: repeat-y; background-size: 13px 26px; }
+
+.cf-left { left: -6px; }
+
+.cf-right { right: -6px; }
+
+.chinese-frame-inner { position: relative; padding: 2.4rem 2.6rem 2.8rem; }
+.chinese-frame-inner.has-bg-image::before { content: ''; position: absolute; inset: 0; background-image: var(--chinese-bg-image); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; filter: sepia(25%) saturate(65%) contrast(0.92) brightness(1.05); opacity: 0.5; }
+.chinese-frame-inner.has-bg-image::after { content: ''; position: absolute; inset: 0; background: rgba(232, 224, 204, 0.75); }
+.chinese-frame-inner.has-bg-image > * { position: relative; z-index: 1; }
+
+/* ---- Masthead ---- */
+.chinese-masthead { text-align: center; margin-bottom: 2.2rem; }
+.chinese-masthead .chinese-masthead-top { display: flex; justify-content: space-between; gap: 0.75rem; font-family: "JetBrains Mono", "Consolas", "Courier New", monospace; font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; color: #1F1B16; padding-bottom: 0.55rem; }
+.chinese-masthead .chinese-name { font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif; font-weight: 700; font-size: 2.5rem; letter-spacing: 0.03em; text-transform: uppercase; margin: 0.35rem 0 0.2rem; }
+.chinese-masthead .chinese-motto { font-style: italic; font-size: 0.9rem; color: #2B3A4A; margin-bottom: 0.5rem; }
+.chinese-masthead .chinese-rule-thin { border: none; border-top: 1px solid #1F1B16; margin: 0; }
+.chinese-masthead .chinese-rule-gap { margin-top: 3px; }
+
+/* ---- Headline / byline ---- */
+.chinese-headline { text-align: center; margin-bottom: 1.6rem; }
+.chinese-headline h2 { font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif; font-weight: 700; font-size: 2.1rem; line-height: 1.25; margin-bottom: 0.5rem; }
+.chinese-headline .chinese-byline { font-family: "JetBrains Mono", "Consolas", "Courier New", monospace; font-size: 0.75rem; color: #2B3A4A; letter-spacing: 0.02em; margin-top: 0.5rem; }
+.chinese-headline .chinese-rule-short { border: none; border-top: 1px solid #1F1B16; width: 24%; margin: 0 auto; }
+
+/* ---- Body copy, with optional right-margin commentary column ---- */
+.chinese-columns { display: block; }
+.chinese-columns.has-annotations { display: grid; grid-template-columns: 1fr 15.5rem; column-gap: 2rem; align-items: start; }
+
+.chinese-body { font-size: 1.05rem; line-height: 1.8; text-align: justify; hyphens: auto; /* asterism section break */ }
+.chinese-body p { margin: 0 0 1.15em; }
+.chinese-body > p:first-of-type::first-letter { font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif; font-weight: 700; float: left; font-size: 3.4em; line-height: 0.8; padding-right: 0.1em; padding-top: 0.05em; color: #1F1B16; }
+.chinese-body em { font-style: italic; }
+.chinese-body strong { font-weight: 700; }
+.chinese-body h1, .chinese-body h2, .chinese-body h3 { font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif; font-weight: 700; text-align: center; line-height: 1.3; margin: 1.5em 0 0.8em; }
+.chinese-body h1 { font-size: 1.5em; }
+.chinese-body h2 { font-size: 1.25em; }
+.chinese-body h3 { font-size: 1.1em; font-style: italic; }
+.chinese-body blockquote { max-width: 32em; margin: 1em auto 1.3em; padding: 0 1.4em; border-left: 3px solid #2B3A4A; font-style: italic; text-align: left; color: #2B3A4A; }
+.chinese-body ul, .chinese-body ol { margin: 0 0 1.15em 1.4em; }
+.chinese-body ul li, .chinese-body ol li { margin-bottom: 0.35em; }
+.chinese-body ul { list-style: disc; }
+.chinese-body ol { list-style: decimal; }
+.chinese-body hr { border: none; height: 1.4em; margin: 0.4em 0 1em; text-align: center; }
+.chinese-body hr::before { content: "*\00a0\00a0*\00a0\00a0*"; color: #1F1B16; }
+.chinese-body img { width: 100%; border: 1px solid rgba(31, 27, 22, 0.35); margin: 0.5em 0 1.1em; }
+
+/* ---- Right margin: chú thích / phản biện, lối bình chú sách cổ học ---- */
+.chinese-annotations { font-family: "Noto Serif", "EB Garamond", Georgia, serif; font-size: 0.82rem; line-height: 1.55; color: #2B3A4A; border-left: 1px solid rgba(31, 27, 22, 0.35); padding-left: 1.1rem; }
+.chinese-annotations p { margin: 0 0 1em; }
+.chinese-annotations strong { color: #1F1B16; }
+
+/* ---- Chop stamp — con triện đỏ, xoay lệch, cuối bài; chi tiết đặc trưng duy nhất của thiết kế, phần còn lại giữ tối giản. ---- */
+.chinese-chop { display: flex; justify-content: flex-end; margin: 1.6rem 0 0.4rem; }
+.chinese-chop span { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 4px; background: #A32C1A; color: #E8E0CC; font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.02em; transform: rotate(-6deg); }
+
+/* ---- Closing rule + colophon ---- */
+.chinese-closing-rule { border: none; border-top: 1px solid #1F1B16; margin: 2rem 0 0.6rem; }
+
+.chinese-colophon { text-align: center; font-family: "JetBrains Mono", "Consolas", "Courier New", monospace; font-size: 0.68rem; letter-spacing: 0.04em; color: #2B3A4A; }
+
+/* ---- Related reading ---- */
+.chinese-related { max-width: 620px; margin: 2.2rem auto 0; text-align: center; }
+.chinese-related h3 { font-family: "JetBrains Mono", "Consolas", "Courier New", monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: #2B3A4A; margin-bottom: 0.6rem; }
+.chinese-related ul { display: inline-block; list-style: none; }
+.chinese-related li { margin-bottom: 0.35rem; }
+.chinese-related a { font-size: 0.88rem; color: #1F1B16; border-bottom: 1px solid rgba(31, 27, 22, 0.35); }
+.chinese-related a:hover { color: #A32C1A; border-color: #A32C1A; }
+
+/* ---- Site header, restyled to match the paper ---- */
+body.chinese-page { background: #E8E0CC; }
+body.chinese-page .site-header { background: #E8E0CC; border-bottom: 1px solid #1F1B16; box-shadow: none; }
+body.chinese-page .site-logo { font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif; color: #1F1B16; }
+body.chinese-page .site-logo:hover { color: #A32C1A; }
+body.chinese-page .site-nav a { font-family: "Noto Serif", "EB Garamond", Georgia, serif; color: #1F1B16; border-right-color: rgba(31, 27, 22, 0.25); }
+body.chinese-page .site-nav a:first-child { border-left-color: rgba(31, 27, 22, 0.25); }
+body.chinese-page .site-nav a:hover, body.chinese-page .site-nav a.active { color: #A32C1A; }
+body.chinese-page .site-footer { background: #E8E0CC; color: #1F1B16; }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) { .chinese-frame-inner { padding: 1.9rem 1.4rem 2.2rem; }
+  .chinese-masthead .chinese-name { font-size: 1.8rem; }
+  .chinese-masthead .chinese-masthead-top { flex-direction: column; gap: 0.15rem; text-align: center; }
+  .chinese-headline h2 { font-size: 1.5rem; }
+  .chinese-columns.has-annotations { grid-template-columns: 1fr; }
+  .chinese-annotations { border-left: none; border-top: 1px solid rgba(31, 27, 22, 0.35); padding-left: 0; padding-top: 1rem; margin-top: 1rem; }
+  .chinese-body { font-size: 1rem; text-align: left; } }

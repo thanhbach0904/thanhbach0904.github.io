@@ -1,0 +1,179 @@
+% ======================================================================
+% "Sách đóng chỉ" (thread-bound book) post layout mockup — 花栏 border
+%
+% Engine: XeLaTeX (Vietnamese diacritics need Unicode + fontspec, same
+% reasoning as essays/thien-tang.tex).
+%
+% Compile:  xelatex tay-du.tex   (twice — frame/rules stabilize on pass 2)
+%
+% Single page, straight into the article: masthead, headline, body with
+% right-margin commentary column, author's red chop stamp at the close.
+% ======================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{vietnamese}
+
+\usepackage[margin=2.6cm,top=2.4cm,bottom=2.6cm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage{lettrine}
+\usepackage{fancyhdr}
+
+% ---- Palette ----
+\definecolor{giay}{HTML}{E8E0CC}     % nền giấy dó
+\definecolor{mucnho}{HTML}{1F1B16}   % chữ mực nho
+\definecolor{sontrien}{HTML}{A32C1A} % son triện — dùng rất tiết chế
+\definecolor{cham}{HTML}{2B3A4A}     % phụ trợ chàm
+
+\pagecolor{giay}
+\color{mucnho}
+
+% ---- Typefaces ----
+% Thân bài: serif đọc dài, ưu tiên phông có phủ dấu tiếng Việt đầy đủ.
+\IfFontExistsTF{Linux Libertine O}{\setmainfont{Linux Libertine O}}{%
+  \IfFontExistsTF{EB Garamond}{\setmainfont{EB Garamond}}{%
+    \IfFontExistsTF{Cambria}{\setmainfont{Cambria}}{%
+      \setmainfont{Latin Modern Roman}}}}
+
+% Tiêu đề: display hơi mang nét thư pháp. (Segoe Print/Script thiếu dấu
+% tiếng Việt — đã thử và loại; Constantia có nét bút mảnh-đậm tương phản,
+% phủ đủ dấu, và khác hẳn phông thân bài để tạo phân tầng thị giác.)
+\IfFontExistsTF{Constantia}{\newfontfamily\displayfont{Constantia}[BoldFont={Constantia Bold}]}{%
+  \newfontfamily\displayfont{Cambria}[BoldFont={Cambria Bold}]}
+\newcommand{\displaybold}{\displayfont\bfseries}
+
+% Ngày tháng / số trang: mono.
+\IfFontExistsTF{Consolas}{\setmonofont{Consolas}}{\setmonofont{Latin Modern Mono}}
+
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{0pt}
+
+% ---- 花栏 (hoa lan) — flower-motif frame, redrawn on every page ----
+\tikzset{
+  flowerdot/.pic={
+    \foreach \a in {0,72,...,288}{
+      \fill[mucnho,opacity=0.5] (\a:0.055) circle (0.042);
+    }
+    \fill[sontrien,opacity=0.4] (0,0) circle (0.018);
+  }
+}
+\newcommand{\PageFrame}{%
+\begin{tikzpicture}[remember picture,overlay]
+  \coordinate (NW) at ($(current page.north west)+(1.55cm,-1.55cm)$);
+  \coordinate (NE) at ($(current page.north east)+(-1.55cm,-1.55cm)$);
+  \coordinate (SW) at ($(current page.south west)+(1.55cm,1.55cm)$);
+  \coordinate (SE) at ($(current page.south east)+(-1.55cm,1.55cm)$);
+  \draw[mucnho,line width=1.0pt] (NW) rectangle (SE);
+  \draw[mucnho,line width=0.35pt] ($(NW)+(0.11cm,-0.11cm)$) rectangle ($(SE)+(-0.11cm,0.11cm)$);
+  \foreach \t in {0,...,11}{
+    \pic at ($(NW)!{\t/11}!(NE)$) {flowerdot};
+    \pic at ($(SW)!{\t/11}!(SE)$) {flowerdot};
+  }
+  \foreach \t in {0,...,16}{
+    \pic at ($(NW)!{\t/16}!(SW)$) {flowerdot};
+    \pic at ($(NE)!{\t/16}!(SE)$) {flowerdot};
+  }
+  \pic[scale=1.5] at (NW) {flowerdot};
+  \pic[scale=1.5] at (NE) {flowerdot};
+  \pic[scale=1.5] at (SW) {flowerdot};
+  \pic[scale=1.5] at (SE) {flowerdot};
+\end{tikzpicture}%
+}
+\AddToShipoutPictureBG*{\PageFrame}
+
+% ---- Footer: page number in mono, sitting just inside the frame ----
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\ttfamily\footnotesize\color{mucnho}--- \thepage\ ---}
+\setlength{\footskip}{1.05cm}
+
+% ---- Masthead: khung kẻ đôi trên/dưới tên báo ----
+\newcommand{\PaperName}{THANH'S JOURNAL}
+\newcommand{\Masthead}{%
+\begin{center}
+  \rule{\textwidth}{0.7pt}\\[1.2pt]\rule{\textwidth}{0.25pt}\\[7pt]
+  {\displaybold\fontsize{38}{40}\selectfont \PaperName}\\[5pt]
+  {\ttfamily\footnotesize SỐ 01 --- THÁNG 8, 2026}\\[7pt]
+  \rule{\textwidth}{0.25pt}\\[1.2pt]\rule{\textwidth}{0.7pt}
+\end{center}}
+
+% ---- Chop stamp — con triện đỏ, xoay lệch, cuối bài ----
+\newcommand{\ChopStamp}{%
+\begin{flushright}
+\begin{tikzpicture}
+  \node[rotate=-7, rounded corners=2pt, fill=sontrien, minimum width=1.55cm,
+        minimum height=1.55cm, inner sep=0pt] (seal) {};
+  \node[rotate=-7] at (seal.center) {%
+    \color{giay}\displaybold\fontsize{15}{15}\selectfont
+    \begin{tabular}{c}T\\[-1pt]T\end{tabular}};
+\end{tikzpicture}
+\end{flushright}}
+
+\begin{document}
+
+% ==================== BÀI CHI TIẾT — thẳng vào nội dung ====================
+\thispagestyle{fancy}
+\Masthead
+\vspace{10pt}
+
+\begin{center}
+  {\displaybold\LARGE Đường đi Tây Trúc thỉnh kinh}\\[4pt]
+  \rule{0.3\textwidth}{0.3pt}\\[4pt]
+  {\ttfamily\footnotesize Bởi Tiên Thành \quad\textperiodcentered\quad Hà Nội}
+\end{center}
+\vspace{12pt}
+
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\textwidth}{@{}X !{\color{mucnho}\vrule width 0.35pt} p{0.235\textwidth}@{}}
+
+\parbox[t]{\linewidth}{%
+\lettrine[lines=3,lhang=0.02,loversize=0.02]{T}{ây Du Ký} không phải là
+một cuộc hành trình để đến, mà là một cuộc hành trình để trở thành.
+Tôn Ngộ Không rời khỏi Hoa Quả Sơn như một khối đá nứt ra từ ngông
+cuồng, và mười vạn tám nghìn dặm sau, thứ trở về Ngũ Hành Sơn không
+còn là con khỉ đại náo thiên cung nữa\textsuperscript{(1)}. Tám mươi
+mốt kiếp nạn không phải là tám mươi mốt chướng ngại vật đặt ra để làm
+khó nhân vật, mà là tám mươi mốt lần bản ngã bị bào mòn, cho đến khi
+thứ còn lại đủ nhẹ để mang tên \emph{Đấu Chiến Thắng Phật}.
+
+Đường Tăng, ngược lại, gần như không thay đổi. Ông đi từ đầu đến cuối
+với cùng một lòng tin, cùng một sự yếu đuối, cùng một khuynh hướng tin
+nhầm yêu tinh là dân lành\textsuperscript{(2)}. Có lẽ đó chính là vai
+trò của ông trong câu chuyện: không phải để trưởng thành, mà để làm
+điểm neo bất biến, một trục thẳng đứng để ba đồ đệ còn lại xoay quanh
+mà tự đo lường chính mình.}
+
+&
+
+\vspace{2pt}
+{\color{cham}\footnotesize
+\textbf{(1)} Trong bản gốc, Ngô Thừa Ân dùng cả trăm chương để phân
+biệt hai trạng thái tâm của Tôn Ngộ Không --- trước và sau vòng kim
+cô --- điều dễ bị bỏ qua khi chỉ xem qua bản chuyển thể truyền hình.
+
+\vspace{7pt}
+\textbf{(2)} Chi tiết lặp lại này thường bị đọc như một điểm yếu kịch
+bản, nhưng cũng có thể đọc như phép thử: lòng từ bi không phân biệt
+đối tượng mới là thứ khiến ông xứng đáng đi trọn đường.}
+
+\end{tabularx}
+
+\vspace{16pt}
+\ChopStamp
+
+\vfill
+\begin{center}
+  \rule{\textwidth}{0.25pt}\\[3pt]
+  {\ttfamily\footnotesize\color{cham} \PaperName{} \textperiodcentered{} in cho tác giả}
+\end{center}
+
+\end{document}
