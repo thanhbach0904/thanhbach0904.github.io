@@ -23,6 +23,7 @@ exclude:
   - Gemfile.lock
   - node_modules
   - README.md
+  - scripts
 
 tags_list:
   - { slug: "politics", label: "Politics" }

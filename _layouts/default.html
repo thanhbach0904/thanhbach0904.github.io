@@ -14,6 +14,12 @@
   {% if page.layout == 'chinese-post' %}
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   {% endif %}
+  {% if page.math %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="{{ '/assets/js/math.js' | relative_url }}"></script>
+  {% endif %}
   {% seo %}
 </head>
 <body{% if page.layout == 'vintage-post' %} class="vintage-page"{% endif %}{% if page.layout == 'chinese-post' %} class="chinese-page"{% endif %}>

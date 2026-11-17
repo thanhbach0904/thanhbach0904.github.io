@@ -1,5 +1,5 @@
 ---
-layout: vintage-post
+layout: post
 title: "Tại sao tôi lại ghét người thừa cân"
 date: 2026-10-12
 tag: life
@@ -7,12 +7,6 @@ description: "TLDR: Vì tôi ghét chính mình"
 read_time: 13
 featured: true
 image: /assets/images/peter.png
-masthead: "12/10/2026"
-motto: ""
-byline: "Tien Thanh"
-place: "HÀ NỘI"
-issue: "Số 1"
-hide_masthead: true
 ---
 
 Không khó để thấy *fat jokes* bên dưới những bài đăng của những người thừa cân trên mạng xã hội.

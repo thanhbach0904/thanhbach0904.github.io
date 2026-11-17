@@ -1,0 +1,186 @@
+{
+  "main": "hard-magnetic-materials-a-perspective-j-m-d-coey",
+  "nodes": [
+    {
+      "id": "hard-magnetic-materials-a-perspective-j-m-d-coey",
+      "title": "Hard Magnetic Materials - A perspective (J.M.D Coey)",
+      "short": "Bài chính",
+      "main": true,
+      "empty": false
+    },
+    {
+      "id": "curie-temperature-nhiet-do-curie",
+      "title": "Curie Temperature (Nhiệt độ Curie)",
+      "short": "Curie Temperature",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "energy-stored-in-magnetic-field",
+      "title": "Energy stored in magnetic field",
+      "short": "Energy stored in magnetic field",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "magnetic-domain-domain-tu",
+      "title": "Magnetic Domain (Domain từ)",
+      "short": "Magnetic Domain",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "magnetic-hysteresis-tu-tre",
+      "title": "Magnetic Hysteresis (Từ trễ)",
+      "short": "Magnetic Hysteresis",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "magnetization-tu-do",
+      "title": "Magnetization (Từ độ)",
+      "short": "Magnetization",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "tu-truong-khu-tu-demagnetinizing-field",
+      "title": "Từ trường khử từ (Demagnetinizing field)",
+      "short": "Từ trường khử từ",
+      "main": false,
+      "empty": true
+    },
+    {
+      "id": "chat-sat-tu-ferromagnet",
+      "title": "Chất sắt từ (Ferromagnet)",
+      "short": "Chất sắt từ",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "chat-thuan-tu-paramagnet",
+      "title": "Chất thuận từ (Paramagnet)",
+      "short": "Chất thuận từ",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "ferrimagnet-nam-cham-sat-tu",
+      "title": "Ferrimagnet (Nam châm sắt từ)",
+      "short": "Ferrimagnet",
+      "main": false,
+      "empty": true
+    },
+    {
+      "id": "duong-cong-tu-hoa-magnetization-curve",
+      "title": "Đường cong từ hoá (Magnetization Curve)",
+      "short": "Đường cong từ hoá",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "do-cam-tu-susceptibility",
+      "title": "Độ cảm từ (Susceptibility)",
+      "short": "Độ cảm từ",
+      "main": false,
+      "empty": false
+    },
+    {
+      "id": "chat-nghich-tu-diamagnet",
+      "title": "Chất nghịch từ (Diamagnet)",
+      "short": "Chất nghịch từ",
+      "main": false,
+      "empty": false
+    }
+  ],
+  "links": [
+    {
+      "source": "hard-magnetic-materials-a-perspective-j-m-d-coey",
+      "target": "tu-truong-khu-tu-demagnetinizing-field"
+    },
+    {
+      "source": "hard-magnetic-materials-a-perspective-j-m-d-coey",
+      "target": "magnetization-tu-do"
+    },
+    {
+      "source": "hard-magnetic-materials-a-perspective-j-m-d-coey",
+      "target": "magnetic-hysteresis-tu-tre"
+    },
+    {
+      "source": "hard-magnetic-materials-a-perspective-j-m-d-coey",
+      "target": "energy-stored-in-magnetic-field"
+    },
+    {
+      "source": "hard-magnetic-materials-a-perspective-j-m-d-coey",
+      "target": "magnetic-domain-domain-tu"
+    },
+    {
+      "source": "hard-magnetic-materials-a-perspective-j-m-d-coey",
+      "target": "curie-temperature-nhiet-do-curie"
+    },
+    {
+      "source": "curie-temperature-nhiet-do-curie",
+      "target": "ferrimagnet-nam-cham-sat-tu"
+    },
+    {
+      "source": "curie-temperature-nhiet-do-curie",
+      "target": "chat-sat-tu-ferromagnet"
+    },
+    {
+      "source": "curie-temperature-nhiet-do-curie",
+      "target": "chat-thuan-tu-paramagnet"
+    },
+    {
+      "source": "curie-temperature-nhiet-do-curie",
+      "target": "magnetization-tu-do"
+    },
+    {
+      "source": "magnetic-domain-domain-tu",
+      "target": "chat-sat-tu-ferromagnet"
+    },
+    {
+      "source": "magnetic-domain-domain-tu",
+      "target": "magnetization-tu-do"
+    },
+    {
+      "source": "magnetic-hysteresis-tu-tre",
+      "target": "chat-sat-tu-ferromagnet"
+    },
+    {
+      "source": "magnetic-hysteresis-tu-tre",
+      "target": "magnetization-tu-do"
+    },
+    {
+      "source": "chat-sat-tu-ferromagnet",
+      "target": "magnetization-tu-do"
+    },
+    {
+      "source": "chat-sat-tu-ferromagnet",
+      "target": "ferrimagnet-nam-cham-sat-tu"
+    },
+    {
+      "source": "chat-thuan-tu-paramagnet",
+      "target": "do-cam-tu-susceptibility"
+    },
+    {
+      "source": "chat-thuan-tu-paramagnet",
+      "target": "magnetization-tu-do"
+    },
+    {
+      "source": "duong-cong-tu-hoa-magnetization-curve",
+      "target": "chat-thuan-tu-paramagnet"
+    },
+    {
+      "source": "duong-cong-tu-hoa-magnetization-curve",
+      "target": "chat-nghich-tu-diamagnet"
+    },
+    {
+      "source": "duong-cong-tu-hoa-magnetization-curve",
+      "target": "magnetization-tu-do"
+    },
+    {
+      "source": "chat-nghich-tu-diamagnet",
+      "target": "do-cam-tu-susceptibility"
+    }
+  ]
+}

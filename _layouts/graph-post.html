@@ -1,0 +1,69 @@
+---
+layout: default
+---
+{% assign graph = site.data.notegraphs[page.notegraph] %}
+<article class="post-page graph-post">
+  <div class="post-header">
+    <div class="container">
+      {% if page.tag %}
+      <a href="{{ '/tag/' | append: page.tag | append: '/' | relative_url }}" class="post-tag-label">{{ page.tag | capitalize }}</a>
+      {% endif %}
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+      {% endif %}
+      <div class="post-meta">
+        <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% if page.read_time %}
+        <span class="post-read-time">{{ page.read_time }} min read</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="post-body">
+    <div class="container post-container">
+      <div class="post-content">
+        {{ content }}
+
+        {% comment %} Without JS this is a plain appendix the wikilinks jump to;
+        with JS it is hidden and used as the source for previews and the reader. {% endcomment %}
+        <section id="note-appendix" class="note-appendix">
+          <h2>Ghi chú liên quan</h2>
+          {% for node in graph.nodes %}{% unless node.main %}
+          <article class="note-src" id="note-{{ node.id }}" data-note="{{ node.id }}">
+            <h3 class="note-src-title">{{ node.title }}</h3>
+            <div class="note-body">
+              {% if node.empty %}
+              <p class="note-empty">Ghi chú này chưa được viết.</p>
+              {% else %}
+              {% capture note_md %}{% include notes/{{ page.notegraph }}/{{ node.id }}.md %}{% endcapture %}
+              {{ note_md | markdownify }}
+              {% endif %}
+            </div>
+          </article>
+          {% endunless %}{% endfor %}
+        </section>
+      </div>
+
+      <aside class="note-aside" aria-label="Knowledge graph">
+        <div class="note-graph">
+          <div class="note-graph-label">Knowledge graph</div>
+          <svg id="note-graph-svg" role="img" aria-label="Graph of linked notes"></svg>
+        </div>
+        <div class="note-reader" id="note-reader">
+          <div class="note-reader-bar">
+            <button type="button" class="note-reader-btn" id="note-reader-back" title="Back" hidden>&larr;</button>
+            <span class="note-reader-title" id="note-reader-title">Ghi chú</span>
+            <button type="button" class="note-reader-btn" id="note-reader-close" title="Close" hidden>&times;</button>
+          </div>
+          <div class="note-reader-body post-content" id="note-reader-body">
+            <p class="note-reader-hint">Di chuột lên một khái niệm được gạch chân để xem trước, nhấp để mở tại đây. Bạn cũng có thể nhấp vào các nút trên đồ thị.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</article>
+<script type="application/json" id="note-graph-data">{{ graph | jsonify }}</script>
+<script defer src="{{ '/assets/js/note-graph.js' | relative_url }}"></script>

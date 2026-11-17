@@ -1,0 +1,1 @@
+Là những vùng trong chất sắt từ <a class="wikilink" href="#note-chat-sat-tu-ferromagnet" data-note="chat-sat-tu-ferromagnet">Chất sắt từ (Ferromagnet)</a> mà ở đó các momen từ hoàn toàn song song với nhau tạo nên <a class="wikilink" href="#note-magnetization-tu-do" data-note="magnetization-tu-do">Magnetization (Từ độ)</a> tự phát của vật liệu sắt từ.
